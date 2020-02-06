@@ -25,7 +25,7 @@ router.get('/:id/edit', (req, res) => {
   });
 });
 
-// edit processes PUT requests on /todos/id'
+// edit processes PUT requests on /id'
 router.put('/:id', (req, res) => {
   Nosh.findOneAndUpdate({ _id: req.params.id }, nosh, { new: true }).then(
     nosh => {
