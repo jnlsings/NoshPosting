@@ -10,7 +10,7 @@ app.set('view engine', 'hbs');
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
-app.use('/nosh', noshController);
+app.use('/', noshController);
 
 app.listen(4000, () => {
   console.log('app listening on port 4000');
