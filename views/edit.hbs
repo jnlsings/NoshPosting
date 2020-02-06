@@ -4,22 +4,23 @@
 
     <p>
         <label>Recipe title:</label>
-        <input type="text" value="{{title}}" name="title"/>
+        <input type="text" value="{{title}}" name="title" />
     </p>
     <p>
         <label>Description:</label>
-        <input type="text" value="{{description}}" name="description"/>
+        <input type="text" value="{{description}}" name="description" />
     </p>
     <p>
         <label>Ingredients:</label>
         {{#each ingredients}}
-        <input type="text" value="{{this}}" name="ingredients"/>
+        <input type="text" value="{{this}}" name="ingredients" />
         {{/each}}
     </p>
     <p>
         <label>Instructions:</label>
         {{#each instructions}}
-        <input type="text" value="{{this}}" name="ingredients"/>
+        <input type="text" value="{{this}}" name="ingredients" />
         {{/each}}
     </p>
+    <input type="submit" value="update" />
 </form>
