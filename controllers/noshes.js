@@ -34,6 +34,14 @@ router.get('/:id/edit', (req, res) => {
   });
 });
 
+router.get('/:id', (req, res) => {
+    Nosh.findById(req.params.id)
+    .then(nosh => {
+        res.render('show', nosh);
+    })
+    .catch(console.error);
+})
+
 // edit processes PUT requests on /id'
 router.put('/:id', (req, res) => {
   Nosh.findOneAndUpdate({ _id: req.params.id }, nosh, { new: true }).then(
@@ -42,5 +50,7 @@ router.put('/:id', (req, res) => {
     }
   );
 });
+
+
 
 module.exports = router;
