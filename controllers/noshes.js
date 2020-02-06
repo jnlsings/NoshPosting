@@ -1,4 +1,5 @@
 const express = require('express');
+<<<<<<< HEAD
 const Nosh = require('../models/Nosh');
 
 const router = express.Router();
@@ -13,3 +14,9 @@ router.get('/', (req, res) => {
 });
 
 module.exports = router;
+=======
+
+const Nosh = require('../models/Nosh');
+
+const router = express.Router();
+>>>>>>> controller + index + connection setup
