@@ -1,11 +1,14 @@
 const express = require('express');
 const app = express();
-const noshController = require('./controllers/noshes')
+const noshController = require('./controllers/noshes');
+const title = require('express-title');
 
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 app.set('view engine', 'hbs');
+
+app.set('title', 'NoshPit');
 
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
