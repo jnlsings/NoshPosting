@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 
 //make a new nosh
 router.get('/new', (req, res) => {
-    res.render('new');
-})
+  res.render('new');
+});
 
 module.exports = router;
