@@ -20,7 +20,7 @@ router.get('/new', (req, res) => {
 // make a new Nosh
 router.post('/', (req, res) => {
   Nosh.create(req.body)
-    .then(nosh => {
+    .then(() => {
       res.redirect('/');
     })
     .catch(console.error);
@@ -51,10 +51,13 @@ router.get('/:id', (req, res) => {
 // edit processes PUT requests on /id'
 router.put('/:id', (req, res) => {
   const nosh = {
-    title: req.body.title
+    title: req.body.title,
+    description: req.body.description,
+    ingredients: req.body.ingredients,
+    instructions: req.body.instructions
   };
   Nosh.findOneAndUpdate({ _id: req.params.id }, nosh, { new: true }).then(
-    nosh => {
+    () => {
       res.redirect('/');
     }
   );

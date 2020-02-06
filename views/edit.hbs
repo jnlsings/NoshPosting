@@ -1,4 +1,4 @@
-<h1>Edit a recipe</h1>
+<h1>Edit a nosh</h1>
 
 <form action="/{{_id}}?_method=put" method="POST">
 
@@ -19,7 +19,7 @@
     <p>
         <label>Instructions:</label>
         {{#each instructions}}
-        <input type="text" value="{{this}}" name="ingredients" />
+        <input type="text" value="{{this}}" name="instructions" />
         {{/each}}
     </p>
     <input type="submit" value="update" />
