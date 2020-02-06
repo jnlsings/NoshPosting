@@ -9,12 +9,21 @@ router.get('/', (req, res) => {
     .then(noshes => {
       res.render('index', { noshes });
     })
-    .catch(err => console.log(err));
+    .catch(console.error);
 });
 
-//make a new nosh
+// link to make a new nosh/render new hbs
 router.get('/new', (req, res) => {
   res.render('new');
+});
+
+// make a new Nosh
+router.post('/', (req, res) => {
+  Nosh.create(req.body)
+    .then(nosh => {
+      res.redirect('/');
+    })
+    .catch(console.error);
 });
 
 // process GET requests on /noshes/id/edit
@@ -33,6 +42,5 @@ router.put('/:id', (req, res) => {
     }
   );
 });
-
 
 module.exports = router;
