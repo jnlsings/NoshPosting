@@ -4,8 +4,7 @@ const NoshSchema = new mongoose.Schema({
   title: String,
   description: String,
   ingredients: Array,
-  instructions: Array,
-  nutritionInfo: Array
+  instructions: Array
 });
 
 const Nosh = mongoose.model('Nosh', NoshSchema);
