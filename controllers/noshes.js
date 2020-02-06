@@ -34,6 +34,12 @@ router.get('/:id/edit', (req, res) => {
   });
 });
 
+router.delete('/:id', (req, res) => {
+    Nosh.findOneAndRemove({_id: req.params.id}).then(()=> {
+        res.redirect('/');
+    })
+})
+
 router.get('/:id', (req, res) => {
   Nosh.findById(req.params.id)
     .then(nosh => {

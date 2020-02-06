@@ -5,6 +5,9 @@
   <li>
     <a href="/{{this._id}}">{{this.title}}</a>
     <a href="/{{this._id}}/edit">Edit</a>
+    <form action="/{{_id}}?_method=delete" method="post">
+    <input type="submit" value="Remove"/>
+</form>
   </li>
   {{/each}}
 </ul>
