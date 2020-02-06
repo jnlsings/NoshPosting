@@ -17,5 +17,21 @@ router.get('/new', (req, res) => {
   res.render('new');
 });
 
+// process GET requests on /noshes/id/edit
+router.get('/:id/edit', (req, res) => {
+  Nosh.findById(req.params.id).then(nosh => {
+    // Render the edit form w/fields prepopulated by passing the found Nosh to hbs template
+    res.render('edit', nosh);
+  });
+});
+
+// edit processes PUT requests on /todos/id'
+router.put('/:id', (req, res) => {
+  Nosh.findOneAndUpdate({ _id: req.params.id }, nosh, { new: true }).then(
+    nosh => {
+      res.redirect('/');
+    }
+  );
+});
 
 module.exports = router;
